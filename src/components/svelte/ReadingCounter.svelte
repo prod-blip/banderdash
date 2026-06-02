@@ -87,4 +87,21 @@
     0%, 100% { opacity: 0.3; }
     50% { opacity: 1; }
   }
+
+  @media (max-width: 600px) {
+    .counter {
+      bottom: var(--space-sm, 0.75rem);
+      right: var(--space-sm, 0.75rem);
+      left: var(--space-sm, 0.75rem);
+      justify-content: center;
+      font-size: 0.65rem;
+      background: var(--color-bg, #faf9f6);
+      padding: 0.4rem 0.6rem;
+      border-radius: 4px;
+    }
+
+    .counter.revealed {
+      font-size: 0.75rem;
+    }
+  }
 </style>
