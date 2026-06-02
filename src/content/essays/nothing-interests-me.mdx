@@ -12,6 +12,11 @@ import DeleteButton from '../../components/svelte/DeleteButton.svelte';
 import DraftGraveyard from '../../components/svelte/DraftGraveyard.svelte';
 import LoopDetector from '../../components/svelte/LoopDetector.svelte';
 import CounterReveal from '../../components/svelte/CounterReveal.svelte';
+import UnclosableTab from '../../components/svelte/UnclosableTab.svelte';
+import ScentTrail from '../../components/svelte/ScentTrail.svelte';
+import ScrollLoop from '../../components/svelte/ScrollLoop.svelte';
+import AdhdQuiz from '../../components/svelte/AdhdQuiz.svelte';
+import GuiltLoop from '../../components/svelte/GuiltLoop.svelte';
 
 <ReadingCounter client:load />
 
@@ -21,11 +26,10 @@ import CounterReveal from '../../components/svelte/CounterReveal.svelte';
 
 Maybe nothing interests me.
 
-Or — maybe everything does. I genuinely can't tell anymore. The two conditions produce identical symptoms: you start a lot of things. You finish almost none of them. You stare at the ceiling and feel something that isn't boredom and isn't excitement but lives in the crawl space between them.
+Or maybe everything does. I can’t tell anymore. The two conditions produce identical symptoms: you start a lot of things and you finish none. The avenues which excite you are immense. You wake up with the motivation of being a tech entrepreneur, shifting to be a designer by the afternoon and end the day dreaming of a movie writer.
 
-I have forty-three browser tabs open. I have a notes app with six hundred entries, most of them a single sentence. I have four drafts of this essay. I have a half-built app, a half-read book, and a fully written resignation letter saved to my Desktop that I've never sent.
+I have <UnclosableTab client:load /> open. I have a notes app with six hundred entries, most of them a single sentence. I have four drafts of this essay. I have a half-built app, a half-read book, and a fully written resignation letter saved to my Desktop that I've never sent.
 
-This isn't a confession. It's an inventory.
 
 ---
 
@@ -33,9 +37,12 @@ This isn't a confession. It's an inventory.
 
 <Drift client:load />
 
-The scatter goes like this: you're writing, and you're writing well, and then a thought appears — not even a thought, more like a scent — and you follow it. You open a tab. You read three paragraphs of something unrelated. You think, *I should save this*, and you do, to a folder you'll never reopen. Then you come back to what you were writing, but the heat is gone. The sentence you were midway through looks like it was written by someone else. Someone more certain.
+The scatter goes like this: you're writing, and you're writing well, and <ScentTrail client:visible />. You open a tab. You read three paragraphs of something unrelated. You think, *I should save this*, and you do, to a folder you'll never reopen. Then you come back to what you were writing, but the heat is gone. The sentence you were midway through looks like it was written by someone else. Someone more certain.
 
-So you wobble out again. You check a platform. Not because you want to — your hands just do it. They know the motions. Open, scroll, close. Open, scroll, close. It takes four seconds and leaves nothing behind except a vague sense of loss, like you dropped something small and heard it roll under the fridge.
+So you wobble out again. You check a platform. Not because you want to — your hands just do it. They know the motions. Open, scroll, close. Open, scroll, close. 
+<ScrollLoop client:visible />
+
+It takes four seconds and leaves nothing behind except a vague sense of loss, like you dropped something small and heard it roll under the fridge.
 
 The platforms don't care. They'll take your scattered attention and sell it by the millisecond. Your incomplete thought is somebody's ad impression. Your unfinished morning is exactly the product.
 
@@ -44,6 +51,8 @@ The platforms don't care. They'll take your scattered attention and sell it by t
 ## III.
 
 I know what you're thinking. You're thinking: *ADHD*.
+
+<AdhdQuiz client:load />
 
 Maybe. Probably. The pattern fits like a diagnostic glove: the hyperfocus followed by total evaporation, the inability to start things that matter and the compulsive starting of things that don't, the twenty-minute tasks that take four hours, the four-hour tasks that take twenty minutes if you do them at 2 AM with a deadline breathing on your neck.
 
@@ -65,7 +74,7 @@ Here's the evidence. I keep it all. Not on purpose — I just never delete anyth
 
 Every one of those was going to be *the thing*. The essay that said what I meant. The project that proved I could finish. The letter that changed my life. They're all still there, open-mouthed and mid-sentence, waiting for a version of me who gets around to it.
 
-The cruelest part isn't that I abandoned them. It's that I remember exactly how each one felt at the start. That rush. That certainty. *This one's different. This one I'll finish.*
+I don't really mind abondoning them now, but I remember exactly how each one felt at the start. That rush. That certainty. *This one's different. This one I'll finish.*
 
 ---
 
@@ -73,11 +82,15 @@ The cruelest part isn't that I abandoned them. It's that I remember exactly how 
 
 And now I'll just type away random things until something sticks or until I close the laptop and do something else and come back to this in three days with fresh guilt and stale coffee.
 
-The thing about scattered attention is that it doesn't feel scattered from the inside. From the inside, it feels like you're the only one paying attention to everything. Like the problem isn't that you can't focus — it's that you can't *stop* focusing. Every input is interesting. Every thread is worth pulling. You're not distracted; you're multiply attracted, in too many directions at once, and the net force is zero.
+The thing about scattered attention is that it doesn't feel scattered from the inside. From the inside, it feels like you're the only one paying attention to everything. Like the problem isn't that you can't focus — it's that you can't *stop* focusing. The inputs are interesting, the threads are motivating. But because the forces in opposite direction cancel out each other, the net output is zero. As per the work energy theorem, and humor my another digression here which goes to elementry physics, zero displacement is zero work. Even if you have travelled the world with your ideas, it is zero work until it helps you displace!
 
 So you sit still. And people think you're lazy. And sometimes you think you're lazy. And then at midnight you write three thousand words about something that doesn't matter, and you think: *See? I'm not lazy. I'm broken in a more interesting way than that.*
 
-The loop goes like this: feel guilty about not finishing → start something new to prove you can → get excited → hit the specific part → feel the heat die → abandon → feel guilty about not finishing. And somewhere in the loop you realize that the loop itself has become the thing you're doing. The loop is the project. The guilt is the product.
+The loop goes like this:
+
+<GuiltLoop client:visible />
+
+And somewhere in the loop you realize that the loop itself has become the thing you're doing. The loop is the project. The guilt is the product.
 
 <LoopDetector client:visible />
 
