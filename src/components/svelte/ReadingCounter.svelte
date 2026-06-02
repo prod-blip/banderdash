@@ -32,7 +32,8 @@
 <div class="counter" class:revealed>
   <span class="counter__dot"></span>
   {#if revealed}
-    <span class="counter__label">You've been here {formatTime(elapsed)}. You're still here.</span>
+    <span class="counter__label desktop-only">You've been here {formatTime(elapsed)}. You're still here.</span>
+    <span class="counter__arrow mobile-only">↓</span>
   {:else}
     <span class="counter__time">{formatTime(elapsed)}</span>
   {/if}
@@ -88,20 +89,34 @@
     50% { opacity: 1; }
   }
 
+  .mobile-only {
+    display: none;
+  }
+
+  .counter__arrow {
+    font-size: 0.9rem;
+    opacity: 0.5;
+  }
+
   @media (max-width: 600px) {
     .counter {
       bottom: var(--space-sm, 0.75rem);
       right: var(--space-sm, 0.75rem);
-      left: var(--space-sm, 0.75rem);
-      justify-content: center;
-      font-size: 0.65rem;
-      background: var(--color-bg, #faf9f6);
-      padding: 0.4rem 0.6rem;
-      border-radius: 4px;
+      font-size: 0.6rem;
+      opacity: 0.2;
     }
 
     .counter.revealed {
-      font-size: 0.75rem;
+      font-size: 0.7rem;
+      opacity: 0.4;
+    }
+
+    .desktop-only {
+      display: none;
+    }
+
+    .mobile-only {
+      display: inline;
     }
   }
 </style>
