@@ -1,0 +1,110 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const essays = (await getCollection('essays'))
+  .filter((e) => !e.data.draft)
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+---
+
+<BaseLayout title="Banderdash">
+  <main class="index">
+    <header class="index__header">
+      <h1>Banderdash</h1>
+      <p>Interactive essays about the things that rattle around.</p>
+    </header>
+
+    {essays.length > 0 ? (
+      <ul class="essay-list">
+        {essays.map((essay) => (
+          <li class="essay-list__item">
+            <a href={`/${essay.id}`}>
+              <h2>{essay.data.title}</h2>
+              <p>{essay.data.description}</p>
+              <time datetime={essay.data.date.toISOString()}>
+                {essay.data.date.toLocaleDateString('en-US', {
+                  year: 'numeric',
+                  month: 'long',
+                  day: 'numeric',
+                })}
+              </time>
+            </a>
+          </li>
+        ))}
+      </ul>
+    ) : (
+      <p class="empty">Nothing here yet. Something is coming.</p>
+    )}
+  </main>
+</BaseLayout>
+
+<style>
+  .index {
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--space-3xl) var(--space-lg);
+  }
+
+  .index__header {
+    text-align: center;
+    margin-bottom: var(--space-3xl);
+  }
+
+  .index__header h1 {
+    font-size: var(--text-3xl);
+    margin-bottom: var(--space-sm);
+  }
+
+  .index__header p {
+    color: var(--color-text-muted);
+    font-size: var(--text-md);
+  }
+
+  .essay-list {
+    list-style: none;
+    width: 100%;
+    max-width: var(--measure);
+  }
+
+  .essay-list__item + .essay-list__item {
+    margin-top: var(--space-xl);
+    padding-top: var(--space-xl);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .essay-list__item a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .essay-list__item a:hover h2 {
+    color: var(--color-accent);
+  }
+
+  .essay-list__item h2 {
+    font-size: var(--text-lg);
+    margin-bottom: var(--space-xs);
+    transition: color var(--transition-fast);
+  }
+
+  .essay-list__item p {
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-sm);
+  }
+
+  .essay-list__item time {
+    font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .empty {
+    color: var(--color-text-muted);
+    font-style: italic;
+  }
+</style>

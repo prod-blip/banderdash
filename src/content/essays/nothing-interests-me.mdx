@@ -1,0 +1,100 @@
+---
+title: 'Nothing Interests Me. Or Everything Does.'
+description: 'An essay about scattered attention, the inability to finish things, and what it feels like from the inside.'
+date: 2024-06-02
+draft: false
+tags: ['attention', 'adhd', 'writing']
+---
+
+import ReadingCounter from '../../components/svelte/ReadingCounter.svelte';
+import Drift from '../../components/svelte/Drift.svelte';
+import DeleteButton from '../../components/svelte/DeleteButton.svelte';
+import DraftGraveyard from '../../components/svelte/DraftGraveyard.svelte';
+import LoopDetector from '../../components/svelte/LoopDetector.svelte';
+import CounterReveal from '../../components/svelte/CounterReveal.svelte';
+
+<ReadingCounter client:load />
+
+<div data-loop-target></div>
+
+## I.
+
+Maybe nothing interests me.
+
+Or — maybe everything does. I genuinely can't tell anymore. The two conditions produce identical symptoms: you start a lot of things. You finish almost none of them. You stare at the ceiling and feel something that isn't boredom and isn't excitement but lives in the crawl space between them.
+
+I have forty-three browser tabs open. I have a notes app with six hundred entries, most of them a single sentence. I have four drafts of this essay. I have a half-built app, a half-read book, and a fully written resignation letter saved to my Desktop that I've never sent.
+
+This isn't a confession. It's an inventory.
+
+---
+
+## II.
+
+<Drift client:load />
+
+The scatter goes like this: you're writing, and you're writing well, and then a thought appears — not even a thought, more like a scent — and you follow it. You open a tab. You read three paragraphs of something unrelated. You think, *I should save this*, and you do, to a folder you'll never reopen. Then you come back to what you were writing, but the heat is gone. The sentence you were midway through looks like it was written by someone else. Someone more certain.
+
+So you wobble out again. You check a platform. Not because you want to — your hands just do it. They know the motions. Open, scroll, close. Open, scroll, close. It takes four seconds and leaves nothing behind except a vague sense of loss, like you dropped something small and heard it roll under the fridge.
+
+The platforms don't care. They'll take your scattered attention and sell it by the millisecond. Your incomplete thought is somebody's ad impression. Your unfinished morning is exactly the product.
+
+---
+
+## III.
+
+I know what you're thinking. You're thinking: *ADHD*.
+
+Maybe. Probably. The pattern fits like a diagnostic glove: the hyperfocus followed by total evaporation, the inability to start things that matter and the compulsive starting of things that don't, the twenty-minute tasks that take four hours, the four-hour tasks that take twenty minutes if you do them at 2 AM with a deadline breathing on your neck.
+
+But I don't have a diagnosis. I have a pattern. And the pattern is: everything is interesting for exactly long enough to abandon.
+
+I've learned to recognize the moment. It's not when the work gets hard — I don't mind hard. It's when the work gets *specific*. When the infinite possibility of the idea narrows to the finite reality of the execution. When you have to choose *this* word instead of *that* word. When you realize the thing you're building is going to be an actual thing, with edges and limits, and it will never be as good as it was when it was just a feeling in your chest.
+
+That's when I leave.
+
+<DeleteButton client:load />
+
+---
+
+## IV.
+
+Here's the evidence. I keep it all. Not on purpose — I just never delete anything, because deleting would mean admitting I'm not coming back to it, and I'm always coming back to it, until I don't.
+
+<DraftGraveyard client:load />
+
+Every one of those was going to be *the thing*. The essay that said what I meant. The project that proved I could finish. The letter that changed my life. They're all still there, open-mouthed and mid-sentence, waiting for a version of me who gets around to it.
+
+The cruelest part isn't that I abandoned them. It's that I remember exactly how each one felt at the start. That rush. That certainty. *This one's different. This one I'll finish.*
+
+---
+
+## V.
+
+And now I'll just type away random things until something sticks or until I close the laptop and do something else and come back to this in three days with fresh guilt and stale coffee.
+
+The thing about scattered attention is that it doesn't feel scattered from the inside. From the inside, it feels like you're the only one paying attention to everything. Like the problem isn't that you can't focus — it's that you can't *stop* focusing. Every input is interesting. Every thread is worth pulling. You're not distracted; you're multiply attracted, in too many directions at once, and the net force is zero.
+
+So you sit still. And people think you're lazy. And sometimes you think you're lazy. And then at midnight you write three thousand words about something that doesn't matter, and you think: *See? I'm not lazy. I'm broken in a more interesting way than that.*
+
+The loop goes like this: feel guilty about not finishing → start something new to prove you can → get excited → hit the specific part → feel the heat die → abandon → feel guilty about not finishing. And somewhere in the loop you realize that the loop itself has become the thing you're doing. The loop is the project. The guilt is the product.
+
+<LoopDetector client:visible />
+
+---
+
+## VI.
+
+I don't have a solution. I don't have five tips. I don't have a morning routine or a productivity system or a story about how I finally figured it out.
+
+I have this: I finished writing this.
+
+That's not nothing.
+
+It's not a breakthrough. It's Tuesday. I sat down and the words came out and I didn't stop, and that's not a method, it's an accident, and tomorrow I might not be able to do it again. But today the cursor moved from the top of the page to the bottom, and the thing that was in my head is now on a screen, and it's imperfect and specific and finite and *done*.
+
+<CounterReveal client:visible />
+
+You're still here too.
+
+That's not nothing either.
